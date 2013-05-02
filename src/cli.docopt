@@ -1,0 +1,15 @@
+Send, a command line for shooting out messages over multiple transports
+using yaml formatted source messages.
+
+Usage:
+  send --help
+  send --version
+  send ses [--access-key=<accesskey>] [--secret-key=<secretkey]
+
+All messages are read from stdin. Environment variables are consulted
+for default values for missing switches.
+
+Environment Variables:
+  AWS_ACCESS_KEY_ID         used for --access-key
+  AWS_SECRET_ACCESS_KEY     used for --secret-key
+  

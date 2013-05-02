@@ -1,0 +1,20 @@
+{
+  "name": "send",
+  "version": "0.0.1",
+  "description": "Command line sending messages.",
+  "dependencies": {
+    "coffee-script": "git://github.com/jashkenas/coffee-script.git",
+    "docopt": "",
+    "js-yaml": "",
+    "nodemailer": ""
+  },
+  "engine": {
+    "node": ">=0.8.11"
+  },
+  "scripts": {
+    "test": "make test"
+  },
+  "bin": {
+    "render": "./bin/render"
+  }
+}
