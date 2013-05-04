@@ -5,6 +5,7 @@
   "dependencies": {
     "coffee-script": "git://github.com/jashkenas/coffee-script.git",
     "docopt": "",
+    "markdown": "",
     "js-yaml": "",
     "nodemailer": ""
   },

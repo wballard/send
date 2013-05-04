@@ -2,9 +2,13 @@ Send, a command line for shooting out messages over multiple transports
 using yaml formatted source messages.
 
 Usage:
-  send --help
-  send --version
-  send ses [--access-key=<accesskey>] [--secret-key=<secretkey]
+  send [options] ses [--access-key=<accesskey>] [--secret-key=<secretkey]
+
+Options:
+  --version           Print the current version
+  --help              Tells us all about it
+  --markdown          Render the .text property as markdown into the .html
+                      property.
 
 All messages are read from stdin. Environment variables are consulted
 for default values for missing switches.

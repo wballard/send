@@ -5,6 +5,7 @@ Main command line entry point.
     yaml = require 'js-yaml'
     fs = require 'fs'
     nodemailer = require 'nodemailer'
+    markdown = require 'markdown'
 
 Actual command line processing via docopt.
 
@@ -29,6 +30,8 @@ Read standard in, sending this along to a passed sender function.
             buffers.push chunk
         process.stdin.on 'end', ->
             context = yaml.safeLoad(Buffer.concat(buffers).toString())
+            if cli.options['--markdown']
+                context.html = markdown.parse context.text
             console.log yaml.safeDump(context)
             sender context
 

@@ -1,4 +1,8 @@
 from: wballard@commitments.us
-to: wballard@glgroup.com
+to: wballard@mailframe.net
 subject: Greetings
-text: Hi there!
+text: |
+  Hi there! Some things to know
+
+  * 1 is **one**
+  * 2 is _two_
