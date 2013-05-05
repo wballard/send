@@ -9,6 +9,8 @@ Options:
   --help              Tells us all about it
   --markdown          Render the .text property as markdown into the .html
                       property.
+  --wrapper           Take the contents of .html and embed it in a bootstrap
+                      themed html template.
 
 All messages are read from stdin. Environment variables are consulted
 for default values for missing switches.
@@ -16,4 +18,3 @@ for default values for missing switches.
 Environment Variables:
   AWS_ACCESS_KEY_ID         used for --access-key
   AWS_SECRET_ACCESS_KEY     used for --secret-key
-  

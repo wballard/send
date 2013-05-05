@@ -1,11 +1,12 @@
 Main command line entry point.
 
     docopt = require 'docopt'
-    path = require 'nodemailer'
+    path = require 'path'
     yaml = require 'js-yaml'
     fs = require 'fs'
     nodemailer = require 'nodemailer'
     markdown = require 'markdown'
+    handlebars = require 'handlebars'
 
 Actual command line processing via docopt.
 
@@ -15,6 +16,12 @@ Actual command line processing via docopt.
             options: docopt.docopt doc, version: require('../package.json').version
             help: doc
     cli = require './cli.docopt'
+
+Templates load nicely via require too.
+
+    require.extensions['.handlebars'] = (module, filename) ->
+        doc = fs.readFileSync filename, 'utf8'
+        module.exports = handlebars.compile(doc)
 
 Full on help.
 
@@ -32,6 +39,8 @@ Read standard in, sending this along to a passed sender function.
             context = yaml.safeLoad(Buffer.concat(buffers).toString())
             if cli.options['--markdown']
                 context.html = markdown.parse context.text
+            if cli.options['--wrapper']
+                context.html = require(path.join(__dirname, 'wrapper.html.handlebars'))(context)
             console.log yaml.safeDump(context)
             sender context
 

@@ -1,6 +1,7 @@
 from: wballard@commitments.us
 to: wballard@mailframe.net
 subject: Greetings
+logon: http://github.com
 text: |
   Hi there! Some things to know
 
